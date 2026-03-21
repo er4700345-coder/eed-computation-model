@@ -1,19 +1,25 @@
+![status](https://img.shields.io/badge/status-active--research-blue)
+![stage](https://img.shields.io/badge/stage-early--experimental-orange)
+![license](https://img.shields.io/badge/license-MIT-green)
+
 # EED Computation Model
 
 An empirical framework for analyzing computational cost beyond classical time complexity.
+
+---
 
 ## Overview
 
 Classical computer science evaluates algorithms primarily by time and space complexity.  
 This model proposes that computation can be described using three interacting dimensions:
 
-- **ΔS (Entropy)** — number of state changes / operations
-- **E (Energy)** — measured runtime (proxy)
-- **D (Causal Depth)** — dependency chain length
+- **ΔS (Entropy)** — number of state changes / operations  
+- **E (Energy)** — measured runtime (proxy)  
+- **D (Causal Depth)** — dependency chain length  
 
 We define the computational cost model as:
 
-C = αΔS + βE + γD
+**C = αΔS + βE + γD**
 
 Where α, β, γ are scaling constants.
 
@@ -37,15 +43,21 @@ When one dimension is constrained, the others shift.
 - Total measurements: **1,050**
 
 **Result:**
-- Zero non-trivial identical triplets observed
-- Near-matches diverge in at least one dimension
-- Divergence increases with scale
+- Zero non-trivial identical triplets observed  
+- Near-matches diverge in at least one dimension  
+- Divergence increases with scale  
+
+---
+
+## Methodology
+
+See `experiments/methodology.md` for measurement definitions and testing procedure.
 
 ---
 
 ## Interpretation
 
-This suggests that entropy, energy, and causal depth are not independent variables, but are structurally coupled in computation.
+This suggests that entropy (ΔS), energy (E), and causal depth (D) are not independent variables, but structurally coupled in computation.
 
 ---
 
@@ -61,3 +73,14 @@ This suggests that entropy, energy, and causal depth are not independent variabl
 
 Early-stage research.  
 Actively being tested against additional algorithms and edge cases.
+
+---
+
+## Future Work
+
+- Refine entropy (ΔS) measurement beyond operation counts  
+- Replace runtime proxy with hardware-level energy measurement  
+- Formalize causal depth (D) using DAG-based computation graphs  
+- Explore equivalence classes of algorithms under EED  
+
+---
