@@ -29,7 +29,7 @@ Where α, β, γ are scaling constants.
 
 Across multiple algorithms and test conditions:
 
-> No two implementations of the same computation were observed to share identical (ΔS, E, D) triplets.
+> No two implementations of the same computation were observed to share identical (ΔS, E, D) triplets under tested conditions.
 
 When one dimension is constrained, the others shift.
 
@@ -52,6 +52,12 @@ When one dimension is constrained, the others shift.
 ## Methodology
 
 See `experiments/methodology.md` for measurement definitions and testing procedure.
+
+---
+
+## Reproducibility
+
+The experiment design, measurement assumptions, and testing structure are documented to allow independent replication and validation.
 
 ---
 
@@ -82,5 +88,12 @@ Actively being tested against additional algorithms and edge cases.
 - Replace runtime proxy with hardware-level energy measurement  
 - Formalize causal depth (D) using DAG-based computation graphs  
 - Explore equivalence classes of algorithms under EED  
+
+---
+
+## Note
+
+This is an experimental model.  
+The goal is to break it, refine it, or replace it.
 
 ---
