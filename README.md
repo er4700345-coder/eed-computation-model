@@ -1,10 +1,16 @@
+---
+
+```markdown
 # The EED Conjecture
 ### *Entropy — Energy — Depth*
 
 [![status](https://img.shields.io/badge/status-active--research-blue)](.)
 [![stage](https://img.shields.io/badge/stage-early--experimental-orange)](.)
 [![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-[![conjecture](https://img.shields.io/badge/type-open--conjecture-purple)](.)
+[![type](https://img.shields.io/badge/type-open--conjecture-purple)](.)
+[![response](https://img.shields.io/badge/Aaronson-replied-gold)](.)
+[![measurements](https://img.shields.io/badge/measurements-1150%2B-darkblue)](.)
+[![counterexamples](https://img.shields.io/badge/counterexamples%20(n%3E6)-0-brightgreen)](.)
 
 > **"Identical outputs do not imply identical physical processes."**
 
@@ -84,22 +90,42 @@ Two algorithms identical by every classical metric — physically distinguished 
 Constraining any two dimensions produces amplified divergence in the third under tested conditions — consistent with compensatory behavior.
 
 **2. Scale Amplification**
-At n=1,000, Bubble Sort and Insertion Sort share identical ΔS=238,363 — but E splits 39,293μs vs 18,101μs and D splits 499,500 vs 239,362. Partial alignment doesn't stabilize the system. It amplifies divergence.
+At n=1,000, Bubble Sort and Insertion Sort share identical ΔS=238,363 — but E splits 39,293μs vs 18,101μs and D splits 499,500 vs 239,362.
 
 **3. Model Refinement Under Attack**
 Scalar D produced false matches between 2-way and 4-way parallel tree reduction. D was enriched to a vector `(depth, branching)`, resolving all false matches. Every attack sharpened the model.
 
 **4. EED Captures Execution, Not Labels**
-Class theory testing showed EED signatures do not cluster by named algorithmic paradigm. BinaryInsertionSort shares an EED signature with BubbleSort — not MergeSort — because its execution is sequential despite its conceptual lineage. EED measures physical structure, not human categories.
+BinaryInsertionSort shares an EED signature with BubbleSort — not MergeSort — because its execution is sequential despite its conceptual lineage. EED measures physical structure, not human categories.
+
+---
+
+## Prior Art
+
+| Reference | Relevance |
+|-----------|-----------|
+| Landauer (1961) | Foundation for ΔS: every irreversible bit costs kT ln2 joules |
+| Bennett (1982) | Maxwell's Demon resolution: erasure = irreversible step |
+| Bennett Logical Depth (1988) | Closest prior concept to D |
+| Lloyd Thermodynamic Depth (1988) | Closest ancestor of full C(n) |
+
+---
+
+## External Response
+
+> *"Sorry, I don't understand the notation you're using, I don't understand what 'structurally distinct' means, etc, so I can't comment."*
+> — **Scott Aaronson**, UT Austin, replied March 21 2026
+
+Clarification sent. Conversation ongoing.
 
 ---
 
 ## Limitations
 
 - **E is a proxy.** Runtime ≠ physical energy. Future work: hardware-level measurement via RAPL.
-- **ΔS is approximate.** Operation count does not distinguish between operation types by irreversibility. Future work: hardware-level entropy measurement.
-- **Python overhead.** GC and interpreter noise affect E. Needs validation in C or Rust.
-- **No formal proof.** This is empirical. The claim is precisely: no counterexample observed in 1,150+ measurements for n > n\*. Not that no counterexample can exist.
+- **ΔS is approximate.** Operation count does not distinguish between operation types by irreversibility.
+- **Python overhead.** Needs validation in C or Rust.
+- **No formal proof.** The claim: no counterexample observed in 1,150+ measurements for n > n\*. Not that no counterexample can exist.
 - **The EED model is empirical and subject to refinement as measurement precision improves.**
 
 ---
@@ -109,18 +135,18 @@ Class theory testing showed EED signatures do not cluster by named algorithmic p
 ```
 eed-computation-model/
 ├── experiments/
-│   ├── kill_test_v1.py          # 7 sorting algorithms, basic
-│   ├── kill_test_v2.py          # 7 algorithms × 3 scales × 50 runs
-│   ├── kill_test_v3.py          # Averaged measurements
-│   ├── phase_transition.py      # Locating n* = 6
-│   ├── brutal_kill_test.py      # 5 new domains, 45 targeted pairs
-│   ├── enriched_d.py            # D vector refinement
-│   ├── equivalence_test.py      # QS vs Heap deep test
-│   └── class_theory.py          # Paradigm clustering analysis
+│   ├── kill_test_v1.py
+│   ├── kill_test_v2.py
+│   ├── kill_test_v3.py
+│   ├── phase_transition.py
+│   ├── brutal_kill_test.py
+│   ├── enriched_d.py
+│   ├── equivalence_test.py
+│   └── class_theory.py
 ├── theory/
-│   └── paper.pdf                # Full academic preprint (6 pages)
+│   └── EED_Conjecture_Paper.pdf
 ├── data/
-│   └── results/                 # Raw measurement outputs
+│   └── results/
 └── README.md
 ```
 
@@ -128,21 +154,15 @@ eed-computation-model/
 
 ## Open Problems
 
-1. **Formal proof** — Does the EED Conjecture hold universally for n > n\*? What is the mathematical structure behind the observed coupling?
-
-2. **Physical validation** — Replace runtime and operation-count proxies with direct hardware measurement. Does the pattern hold at the physical layer?
-
-3. **Untested domains** — Cryptographic operations, matrix algorithms, ML inference, numerical methods. Does the conjecture survive?
-
-4. **Equivalence classes** — Are there algorithm families that genuinely share EED signatures? What is the structure of those classes?
-
-5. **The coefficients** — What determines α, β, γ in different physical substrates? Do they vary predictably across hardware architectures?
+1. **Formal proof** — Does the EED Conjecture hold universally for n > n\*?
+2. **Physical validation** — Replace proxies with direct hardware measurement.
+3. **Untested domains** — Cryptographic operations, matrix algorithms, ML inference.
+4. **Equivalence classes** — Are there algorithm families that genuinely share EED signatures?
+5. **The coefficients** — What determines α, β, γ in different physical substrates?
 
 ---
 
 ## Citation
-
-If you use or build on this work:
 
 ```
 EED Conjecture of Computational Distinguishability
@@ -162,3 +182,4 @@ Early-stage independent research. Actively tested. No counterexample found for n
 ---
 
 *Built at 2:11 AM. March 21, 2026.*
+```
