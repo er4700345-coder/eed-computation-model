@@ -1,6 +1,3 @@
----
-
-```markdown
 # The EED Conjecture
 ### *Entropy — Energy — Depth*
 
